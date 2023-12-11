@@ -16,8 +16,8 @@ phases:
       - echo Prebuild ops
       - pip3 install -r requirements.txt
       - sleep 5
-      - sonar-scanner -Dsonar.organization=$sumanth010895 -Dsonar.projectKey=$sumanth010895_student-crm -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$dba9e18d7919977c3a498f828520f7b1304a5666
-      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=$sumanth010895_student-crm > analysis.json
+      - sonar-scanner -Dsonar.organization=sumanth010895 -Dsonar.projectKey=sumanth010895_student-crm -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=dba9e18d7919977c3a498f828520f7b1304a5666
+      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=sumanth010895_student-crm > analysis.json
       - cat analysis.json
   build:
     commands:
