@@ -1,9 +1,11 @@
+
+
 version: 0.2
 
 phases:
   install:
     runtime-versions:
-      python: 3.11  # Update Python version as per your requirement
+      python: 3.110.12  # Update Python version as per your requirement
     commands:
       - apt-get update
       - apt-get install -y default-jre  # Install Java (required for SonarScanner)
