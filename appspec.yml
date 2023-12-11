@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files: 
   - source: /
-    destination: /home/ubuntu/SMS_Devops
+    destination: /home/ubuntu/student_crm
 permissions:
-  - object: /home/ubuntu/SMS_Devops
+  - object: /home/ubuntu/student_crm
     owner: ubuntu
     group: ubuntu
 hooks:
