@@ -9,7 +9,7 @@ phases:
       - apt-get install -y default-jre  # Install Java (required for SonarScanner)
       - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
       - unzip sonar-scanner-cli-4.6.2.2472-linux.zip
-      - export PATH=$PATH:/path/to/sonar-scanner-4.6.2.2472-linux/bin
+      - export PATH=$PATH:./sonar-scanner-4.6.2.2472-linux/bin/
 
   pre_build:
     commands:
