@@ -1,34 +1,63 @@
 
+# WIth Soanr Cube
+# version: 0.2
 
-version: 0.2
+# phases:
+#   install:
+#     runtime-versions:
+#       python: 3.11  # Update Python version as per your requirement
+#     commands:
+#       - apt-get update
+#       - apt-get install -y default-jre  # Install Java (required for SonarScanner)
+#       - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+#       - unzip sonar-scanner-cli-4.6.2.2472-linux.zip
+#       - export PATH=$PATH:./sonar-scanner-4.6.2.2472-linux/bin/
+
+#   pre_build:
+#     commands:
+#       - echo Prebuild ops
+#       - pip3 install -r requirements.txt
+#       - sleep 5
+#       - sonar-scanner -Dsonar.organization=sumanth010895 -Dsonar.projectKey=sumanth010895_student-crm -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=dba9e18d7919977c3a498f828520f7b1304a5666
+#       - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=sumanth010895_student-crm > analysis.json
+#       - cat analysis.json
+#   build:
+#     commands:
+#       - echo Building the application
+
+#   post_build:
+#     commands:
+#       - echo Build completed on `date`
+
+# artifacts:
+#   files:
+#     - '**/*'
+
+# Without Soanr
+version: 0.1
+
+# environment_variables:
+  # plaintext:
+  #   DJANGO_SETTINGS_MODULE: config.settings.test
+  #   SECRET_KEY: nosecret
+  #   DATABASE_DEFAULT_URL: sqlite:///db1.sqlite3
+  #   DATABASE_STREAMDATA_URL: sqlite:///db2.sqlite3
+  #   STREAM_INCOMING_PRIVATE_KEY: changeme
+  #   STREAM_INCOMING_PUBLIC_KEY: changeme
+  #   GOOGLE_API_KEY: changeme
+  #   OPBEAT_ENABLED: False
 
 phases:
-  install:
-    runtime-versions:
-      python: 3.10.12  # Update Python version as per your requirement
-    commands:
-      - apt-get update
-      - apt-get install -y default-jre  # Install Java (required for SonarScanner)
-      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
-      - unzip sonar-scanner-cli-4.6.2.2472-linux.zip
-      - export PATH=$PATH:./sonar-scanner-4.6.2.2472-linux/bin/
-
   pre_build:
     commands:
       - echo Prebuild ops
       - pip3 install -r requirements.txt
-      - sleep 5
-      - sonar-scanner -Dsonar.organization=sumanth010895 -Dsonar.projectKey=sumanth010895_student-crm -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=dba9e18d7919977c3a498f828520f7b1304a5666
-      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=sumanth010895_student-crm > analysis.json
-      - cat analysis.json
   build:
     commands:
-      - echo Building the application
-
+      - echo Building the application 
   post_build:
     commands:
       - echo Build completed on `date`
-
 artifacts:
   files:
     - '**/*'
