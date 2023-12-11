@@ -6,11 +6,11 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/SMS_Devops
-ExecStart=/home/ubuntu/SMS_Devops/venv/bin/gunicorn \
+WorkingDirectory=/home/ubuntu/student_crm
+ExecStart=/home/ubuntu/student_crm/venv/bin/gunicorn \
           --access-logfile - \
           --workers 3 \
           --bind unix:/run/gunicorn.sock \
-          mysite.wsgi:application
+          django_project.wsgi:application
 [Install]
 WantedBy=multi-user.target
